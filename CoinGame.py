@@ -16,5 +16,8 @@ for i in range(iters):
         students[s1] -= 1
         students[s2] += 1
 students.sort()
-pyplot.scatter(range(n), students[::-1])
-pyplot.show()
+with pyplot.xkcd():
+    pyplot.scatter(range(n), students[::-1], marker='.', color='r')
+    pyplot.xlabel('Student Rank')
+    pyplot.ylabel('Coins owned after ' + str(iters) + ' iterations')
+    pyplot.show()
